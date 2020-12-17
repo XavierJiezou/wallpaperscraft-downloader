@@ -2,6 +2,8 @@
 This is a wallpaper downloader for [https://wallpaperscraft.com/](https://wallpaperscraft.com/).
 ## demo
 ![demo](demo.gif)
+## result
+![demo](result.jpg)
 ## install
 ```bash
 pip install -r requirements.txt
