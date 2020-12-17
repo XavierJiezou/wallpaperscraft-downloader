@@ -2,6 +2,10 @@
 This is a wallpaper downloader for [https://wallpaperscraft.com/](https://wallpaperscraft.com/).
 ## demo
 ![demo](demo.gif)
+## install
+```bash
+pip install -r requirements.txt
+```
 ## run1.py
 Apply multi-thread to download each page's pictures and crawl only one page each time.
 ## run2.py
