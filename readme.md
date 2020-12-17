@@ -1,5 +1,7 @@
 # wallpaperscraft-downloader
 This is a wallpaper downloader for [https://wallpaperscraft.com/](https://wallpaperscraft.com/).
+## demo
+![demo](demo.gif)
 ## run1.py
 apply multi-thread to download each page's pictures and crawl only one page each time.
 ## run2.py
