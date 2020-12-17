@@ -46,7 +46,9 @@ class WallpaperDownloader(object):
         return res['translateResult'][0][0]['tgt']
 
     def get_tags(self):
+        print('='*30)
         print('正在获取壁纸标签：')
+        print('='*30)
         if not os.path.exists('tags.txt'):
             resp = requests.get(self.site, proxies=self.proxies)
             soup = BeautifulSoup(resp.content, 'lxml')
@@ -68,9 +70,12 @@ class WallpaperDownloader(object):
 
     def get_input(self):
         print('所有标签信息如下：')
-        for index,tag in enumerate(self.tags):
+        print('='*30)
+        for index, tag in enumerate(self.tags):
             print(f'{index+1:0>2}> {tag[1]} 总计{tag[2]}张')
+        print('='*30)
         inp = input('请选择下载的标签：')
+        print('='*30)
         choose_tag = int(inp) if inp else 5
         self.root = self.tags[choose_tag-1][1]
         os.makedirs(self.root, exist_ok=True)
@@ -136,11 +141,15 @@ class WallpaperDownloader(object):
         last = soup.select('div.pager>ul.pager__list>li>a')[-1]['href']
         self.total_page = int(last.split('/')[-1].replace('page', ''))
         print(f'该标签共有{self.total_page}页图片。')
+        print('='*30)
         start_page = int(input('指定起始下载页数：'))
         end_page = int(input('指定终止下载页数：'))
+        print('='*30)
         sum_page = end_page-start_page+1
         for index in range(start_page, end_page+1):
             self.crawl_page(index)
+        print('='*30)
+        os.system('pause')
 
 
 if __name__ == "__main__":
